@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ant Design Pro Clone</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+        .container {
+            display: flex;
+            height: 100%;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #001529;
+            color: #fff;
+            padding: 20px 0;
+        }
+        .logo {
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #333;
+        }
+        .nav-item {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .nav-item:hover, .nav-item.active {
+            background-color: #1890ff;
+        }
+        .sub-nav {
+            padding-left: 30px;
+            font-size: 14px;
+        }
+        .main-content {
+            flex-grow: 1;
+            background-color: #f0f2f5;
+            padding: 20px;
+        }
+        .header {
+            background-color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .search-bar {
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #d9d9d9;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+        .user-avatar {
+            width: 24px;
+            height: 24px;
+            background-color: #1890ff;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">Ant Design Pro</div>
+            <div class="nav-item">
+                <span>Cliente</span>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="nav-item">secondary navigation</div>
+            <div class="nav-item active">secondary navigation</div>
+            <div class="nav-item">
+                <span>Inventario</span>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="sub-nav">tertiary navigation</div>
+            <div class="sub-nav">tertiary navigation</div>
+            <div class="nav-item">
+                <span>Administrador</span>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="nav-item">
+                <span>Finanzas</span>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="nav-item">
+                <span>logistica</span>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="nav-item">Otro</div>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <div class="user-info">
+                    <div class="user-avatar"></div>
+                    <span>username</span>
+                </div>
+            </div>
+             Aquí iría el contenido principal 
+        </div>
+    </div>
+
+    <script>
+        // Añadir interactividad a los elementos del menú
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

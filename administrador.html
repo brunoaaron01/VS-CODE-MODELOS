@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferretería - Administrador</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Clientes</h1>
+        <form id="clientForm">
+            <label for="clientName">Nombre del Cliente:</label>
+            <input type="text" id="clientName" required>
+            <label for="clientEmail">Correo Electrónico:</label>
+            <input type="email" id="clientEmail" required>
+            <button type="submit">Agregar Cliente</button>
+        </form>
+        <h2>Clientes Registrados</h2>
+        <ul id="clientList"></ul>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
