@@ -8,17 +8,41 @@
 </head>
 <body>
     <div class="container">
-        <h1>Prototipos de Ferretería</h1>
-        <nav>
-            <ul>
-                
-                <li><a href="cliente.html">Venta</a></li>
-                <li><a href="administrador.html">Gestion de clientes</a></li>
-                <li><a href="inventario.html">Inventario</a></li>
-                <li><a href="logistica.html">Rutas</a></li>
-                <li><a href="financiero.html">Generar informes</a></li>
-            </ul>
-        </nav>
+        <div class="sidebar">
+            <div class="logo">MENU</div>
+            <div class="nav-item">
+                <span>Venta</span>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="nav-item">Inventario</div>
+            <div class="nav-item active">secondary navigation</div>
+            <div class="nav-item">
+                <span>Gestion Cliente</span>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="sub-nav">RUTAS</div>
+            <div class="sub-nav">tertiary navigation</div>
+            
+            <div class="nav-item">
+                <span>Finanzas</span>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="nav-item">
+                <span>Generar Informe</span>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="nav-item">Otro</div>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <div class="user-info">
+                    <div class="user-avatar"></div>
+                    <span>username</span>
+                </div>
+            </div>
+             Aquí iría el contenido principal 
+        </div>
     </div>
 
     <script>
