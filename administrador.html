@@ -8,17 +8,36 @@
 </head>
 <body>
     <div class="container">
+        <button onclick="window.location.href='index.html'" class="back-button">← Volver</button>
+        
         <h1>Gestión de Clientes</h1>
+        
         <form id="clientForm">
-            <label for="clientName">Nombre del Cliente:</label>
-            <input type="text" id="clientName" required>
-            <label for="clientEmail">Correo Electrónico:</label>
-            <input type="email" id="clientEmail" required>
-            <button type="submit">Agregar Cliente</button>
+            <label for="firstName">Nombre:</label>
+            <input type="text" id="nombres" required>
+
+            <label for="lastName">Apellidos:</label>
+            <input type="text" id="apellidos" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="gmail" required>
+
+            <label for="phone">Teléfono:</label>
+            <input type="tel" id="telefono" pattern="[0-9]{9}" placeholder="9 dígitos" required>
+
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" pattern="[0-9]{8}" placeholder="8 dígitos" required>
+
+            <label for="address">Dirección:</label>
+            <textarea id="direccion" rows="2" required></textarea>
+
+            <button type="submit">Registrar Cliente</button>
         </form>
+
         <h2>Clientes Registrados</h2>
         <ul id="clientList"></ul>
     </div>
+
     <script src="scripts.js"></script>
 </body>
 </html>
