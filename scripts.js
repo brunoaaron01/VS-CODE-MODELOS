@@ -50,30 +50,61 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Manejar el formulario de clientes
-    const clientForm = document.getElementById('clientForm');
-    if (clientForm) {
-        clientForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('clientName').value;
-            const email = document.getElementById('clientEmail').value;
-            clients.push({ name, email });
-            document.getElementById('clientForm').reset();
-            updateClientList();
-        });
-    }
+const clientForm = document.getElementById('clientForm');
+const clientList = document.getElementById('clientList');
+const clients = [];
 
-    // Actualizar lista de clientes
-    function updateClientList() {
-        const list = document.getElementById('clientList');
-        if (list) {
-            list.innerHTML = '';
-            clients.forEach(client => {
-                const li = document.createElement('li');
-                li.innerText = `${client.name} - ${client.email}`;
-                list.appendChild(li);
-            });
-        }
-    }
+// Verificamos si el formulario existe
+if (clientForm) {
+    clientForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Obtenemos los valores de los campos del formulario
+        const nombres = document.getElementById('nombres').value;
+        const apellidos = document.getElementById('apellidos').value;
+        const gmail = document.getElementById('gmail').value;
+        const telefono = document.getElementById('telefono').value;
+        const dni = document.getElementById('dni').value;
+        const direccion = document.getElementById('direccion').value;
+
+        // Guardamos los datos del cliente en el array
+        clients.push({
+            nombres,
+            apellidos,
+            gmail,
+            telefono,
+            dni,
+            direccion
+        });
+
+        // Limpiamos el formulario
+        clientForm.reset();
+
+        // Actualizamos la lista de clientes
+        updateClientList();
+    });
+}
+
+// Función para mostrar los clientes registrados en la lista
+function updateClientList() {
+    clientList.innerHTML = ''; // Limpiamos la lista anterior
+
+    clients.forEach((client, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${client.firstName} ${client.lastName} - ${client.email} - Tel: ${client.phone}`;
+        
+        // Agregamos un botón para eliminar el cliente
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Eliminar';
+        deleteButton.onclick = () => {
+            clients.splice(index, 1); // Eliminamos el cliente del array
+            updateClientList(); // Actualizamos la lista
+        };
+
+        li.appendChild(deleteButton);
+        clientList.appendChild(li);
+    });
+}
 
     // Manejar el formulario de inventario
     const inventoryForm = document.getElementById('inventoryForm');
