@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Productos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: url('fondo-ferreteria.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100%;
+            background-color: #e1f5fe;
+            padding: 15px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #b3e5fc;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #81d4fa;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .form-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .form-section h3 {
+            margin-top: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin: 10px 0 5px;
+        }
+
+        form input, form select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e1f5fe;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>Menú</h2>
+            </div>
+            <ul>
+                <li><a href="#producto">Registrar Producto</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <div id="form-container">
+                <div id="producto" class="form-section">
+                    <h3>Registrar Producto</h3>
+                    <form id="product-form">
+                        <label for="id-producto">ID Producto:</label>
+                        <input type="text" id="id-producto" value="PRD-001" readonly>
+                        
+                        <label for="nombre-producto">Nombre del Producto:</label>
+                        <input type="text" id="nombre-producto" required>
+                        
+                        <label for="precio">Precio:</label>
+                        <input type="number" id="precio" required>
+                        
+                        <label for="tipo-producto">Tipo de Producto:</label>
+                        <select id="tipo-producto" required>
+                            <option value="">Selecciona un tipo</option>
+                            <option value="herramienta">Herramienta</option>
+                            <option value="material">Material</option>
+                            <option value="accesorio">Accesorio</option>
+                        </select>
+                        
+                        <label for="proveedor">Nombre del Proveedor:</label>
+                        <input type="text" id="proveedor" required>
+                        
+                        <button type="submit">Registrar Producto</button>
+                    </form>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Productos Registrados</h3>
+                    <table id="product-table">
+                        <thead>
+                            <tr>
+                                <th>ID Producto</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Tipo</th>
+                                <th>Proveedor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Los productos registrados se agregarán aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Generar un ID de producto automáticamente
+        let productIdCounter = 1;
+
+        function generateProductId() {
+            const productId = `PRD-${String(productIdCounter).padStart(3, '0')}`;
+            document.getElementById('id-producto').value = productId;
+            productIdCounter++;
+        }
+
+        // Llamar a la función para generar el ID al cargar la página
+        generateProductId();
+
+        document.getElementById('product-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const idProducto = document.getElementById('id-producto').value;
+            const nombreProducto = document.getElementById('nombre-producto').value;
+            const precio = document.getElementById('precio').value;
+            const tipoProducto = document.getElementById('tipo-producto').value;
+            const proveedor = document.getElementById('proveedor').value;
+
+            const tableBody = document.getElementById('product-table').querySelector('tbody');
+            const newRow = document.createElement('tr');
+
+            newRow.innerHTML = `
+                <td>${idProducto}</td>
+                <td>${nombreProducto}</td>
+                <td>${precio}</td>
+                <td>${tipoProducto}</td>
+                <td>${proveedor}</td>
+            `;
+
+            tableBody.appendChild(newRow);
+
+            // Limpiar el formulario
+            document.getElementById('product-form').reset();
+            generateProductId(); // Generar nuevo ID para el próximo producto
+        });
+    </script>
+</body>
+</html>

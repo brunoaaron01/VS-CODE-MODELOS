@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Productos en Inventario</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <button onclick="window.location.href='index.html'" class="back-button">← Volver</button>
+    
+    <h1>Consulta de Productos en Inventario</h1>
+    
+    <label for="searchProduct">Buscar Producto:</label>
+    <input type="text" id="searchProduct" placeholder="Escribe el nombre del producto...">
+
+    <button onclick="filterProducts()">Buscar</button>
+
+    <table id="inventoryTable">
+        <thead>
+            <tr>
+                <th>Nombre del Producto</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody id="inventoryList">
+            <!-- Aquí se mostrarán los productos -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Ejemplo de productos en inventario
+    const products = [
+        { productName: 'Martillo', stock: 50 },
+        { productName: 'Destornillador', stock: 100 },
+        { productName: 'Sierra', stock: 30 },
+        { productName: 'Taladro', stock: 20 }
+    ];
+
+    function renderInventoryList(filter = '') {
+        const inventoryList = document.getElementById('inventoryList');
+        inventoryList.innerHTML = ''; // Limpiar la lista actual
+
+        const filteredProducts = products.filter(product => 
+            product.productName.toLowerCase().includes(filter.toLowerCase())
+        );
+
+        filteredProducts.forEach(product => {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${product.productName}</td><td>${product.stock}</td>`;
+            inventoryList.appendChild(row);
+        });
+    }
+
+    function filterProducts() {
+        const searchProduct = document.getElementById('searchProduct').value;
+        renderInventoryList(searchProduct);
+    }
+
+    // Renderizar la lista inicial
+    renderInventoryList();
+</script>
+
+</body>
+</html>

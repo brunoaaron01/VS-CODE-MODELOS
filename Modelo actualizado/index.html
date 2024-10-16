@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferreteria</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>Menú</h2>
+            </div>
+            <ul>
+                <li><a href="#clientes">Clientes</a></li>
+                <li><a href="#inventario">Inventario</a></li>
+                <li><a href="#producto">Producto</a></li>
+                <li><a href="#rutas">Rutas</a></li>
+                <li><a href="#logistica">Logistica</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <div id="form-container">
+                <div id="clientes" class="form-section">
+                    <h3>Clientes</h3>
+                    <form>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+
+                <div id="inventario" class="form-section" style="display: none;">
+                    <h3>Inventario</h3>
+                    <form>
+                        <label for="producto">Producto:</label>
+                        <input type="text" id="producto" required>
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="number" id="cantidad" required>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+
+                <div id="producto" class="form-section" style="display: none;">
+                    <h3>Producto</h3>
+                    <form>
+                        <label for="nombre-producto">Nombre del Producto:</label>
+                        <input type="text" id="nombre-producto" required>
+                        <label for="precio">Precio:</label>
+                        <input type="number" id="precio" required>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+
+                <div id="rutas" class="form-section" style="display: none;">
+                    <h3>Logistica</h3>
+                    <form>
+                        <label for="origen">Origen:</label>
+                        <input type="text" id="origen" required>
+                        <label for="destino">Destino:</label>
+                        <input type="text" id="destino" required>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+                <div id="logistica" class="form-section" style="display: none;">
+                    <h3>Rutas</h3>
+                    <form>
+                        <label for="produ">producto:</label>
+                        <input type="text" id="produ" required>
+                        <label for="destino">tal vez:</label>
+                        <input type="text" id="destino" required>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
