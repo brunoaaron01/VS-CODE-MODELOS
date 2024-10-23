@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F0F0F0; /* Fondo gris claro neutro */
+    color: #333333; /* Texto gris oscuro */
+}
+
+/* Barra de contacto superior */
+.top-bar {
+    background-color: #2C3E50; /* Azul acero para la barra superior */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4A4A4A; /* Gris oscuro industrial para la barra de navegación */
+    padding: 15px 30px;
+    position: relative;
+}
+
+/* Diseño del logo y menú */
+.logo-menu {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.logo-text {
+    font-size: 24px;
+    color: white;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.menu-icon {
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.menu-icon:hover {
+    color: #F4A300; /* Amarillo mostaza para el hover */
+}
+
+/* Barra de búsqueda */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC; /* Borde gris claro */
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 10px;
+    background-color: #E67E22; /* Naranja intenso para los botones */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.search-bar button:hover {
+    background-color: #D35400; /* Naranja oscuro en hover */
+}
+
+/* Opciones de usuario */
+.user-options a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.user-options a:hover {
+    text-decoration: underline;
+}
+
+/* Menú desplegable estilo deslizante */
+.dropdown {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    max-width: 100%;
+    padding-top: 60px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+/* Menú activo que desliza desde la izquierda */
+.show {
+    transform: translateX(0);
+}
+
+/* Estilo del contenido del menú */
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    padding: 20px;
+    border-bottom: 1px solid #DDD;
+}
+
+.dropdown ul li a {
+    text-decoration: none;
+    color: #333333; /* Texto gris oscuro */
+    font-size: 18px;
+    display: block;
+    text-align: left;
+}
+
+.dropdown ul li a:hover {
+    color: #F4A300; /* Amarillo mostaza en hover */
+}
+
+/* Productos */
+.products {
+    padding: 30px;
+    background-color: #FFFFFF; /* Fondo blanco para las tarjetas de producto */
+}
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.product-carousel {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #DDD;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.placeholder-img {
+    width: 100px;
+    height: 100px;
+    background-color: #EEE;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.product h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 16px;
+    color: #E67E22; /* Naranja intenso para los precios */
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.product button {
+    background-color: #2C3E50; /* Azul acero para los botones */
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.product button:hover {
+    background-color: #F4A300; /* Amarillo mostaza en hover */
+}
+
+/* Footer */
+footer {
+    background-color: #2C3E50; /* Azul acero para el pie de página */
+    color: white;
+    padding: 30px 20px;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-info div {
+    width: 30%;
+}
+
+.footer-info a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-info a:hover {
+    text-decoration: underline;
+}

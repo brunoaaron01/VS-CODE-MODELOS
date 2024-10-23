@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferretería - Tienda Online</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ff5722;
+            padding: 15px;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .container {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        /* Sidebar - Categorías */
+        .sidebar {
+            width: 25%;
+            padding: 20px;
+            background-color: #fff;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar h3 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .sidebar ul li a:hover {
+            color: #ff5722;
+        }
+
+        /* Lista de productos */
+        .products {
+            width: 75%;
+            padding: 20px;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .product-item {
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: contain;
+        }
+
+        .product-item h4 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .product-item p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .product-item .price {
+            color: #ff5722;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .product-item button {
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .product-item button:hover {
+            background-color: #e64a19;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #ff5722;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Ferretería Online - Compra tus productos
+</header>
+
+<div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Categorías</h3>
+        <ul>
+            <li><a href="#">Herramientas</a></li>
+            <li><a href="#">Materiales de Construcción</a></li>
+            <li><a href="#">Electricidad</a></li>
+            <li><a href="#">Fontanería</a></li>
+            <li><a href="#">Pintura</a></li>
+        </ul>
+    </div>
+
+    <!-- Lista de productos -->
+    <div class="products">
+        <h3>Productos disponibles</h3>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="https://via.placeholder.com/150" alt="Producto 1">
+                <h4>Martillo de Acero</h4>
+                <p class="price">S/ 49.90</p>
+                <button>Agregar</button>
+            </div>
+
+            <div class="product-item">
+                <img src="https://via.placeholder.com/150" alt="Producto 2">
+                <h4>Taladro Eléctrico</h4>
+                <p class="price">S/ 199.90</p>
+                <button>Agregar</button>
+            </div>
+
+            <div class="product-item">
+                <img src="https://via.placeholder.com/150" alt="Producto 3">
+                <h4>Destornillador Set 5 piezas</h4>
+                <p class="price">S/ 29.90</p>
+                <button>Agregar</button>
+            </div>
+
+            <div class="product-item">
+                <img src="https://via.placeholder.com/150" alt="Producto 4">
+                <h4>Alicates</h4>
+                <p class="price">S/ 39.90</p>
+                <button>Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2024 Ferretería Online. Todos los derechos reservados.
+</footer>
+
+</body>
+</html>
